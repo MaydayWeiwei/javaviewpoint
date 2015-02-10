@@ -5,7 +5,7 @@
   <parent>
   	<groupId>org.openflexo</groupId>
   	<artifactId>openflexo-modules</artifactId>
-  	<version>1.7.0-SNAPSHOT</version>
+  	<version>1.7.1-SNAPSHOT</version>
   </parent>
   <dependencies>
   	<dependency>
@@ -19,12 +19,12 @@
   			<dependency>
 			<groupId>org.openflexo.technologyadapter</groupId>
 			<artifactId>javaconnector</artifactId>
- 			<version>1.7.0-SNAPSHOT</version>
+ 			<version>1.7.1-SNAPSHOT</version>
 		</dependency>
  		<dependency>
 			<groupId>org.openflexo.technologyadapter</groupId>
 			<artifactId>javaconnector-ui</artifactId>
-			<version>1.7.0-SNAPSHOT</version>
+			<version>1.7.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>
 <!--   <groupId>org.openflexo.module</groupId>
