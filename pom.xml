@@ -27,6 +27,4 @@
 			<version>1.7.1-SNAPSHOT</version>
 		</dependency>
   </dependencies>
-<!--   <groupId>org.openflexo.module</groupId>
-  <description>${moduleDescription}</description> -->
 </project>
