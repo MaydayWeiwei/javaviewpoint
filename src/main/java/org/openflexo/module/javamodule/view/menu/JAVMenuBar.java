@@ -43,7 +43,7 @@ public class JAVMenuBar extends FlexoMenuBar {
 	}
 
 	// TODO Documenter la liste des menus qu'il est nécessaire d'avoir?
-	
+
 	/**
 	 * Build if required and return ${moduleTrigam} 'File' menu. This method overrides the default one defined on superclass
 	 * 
@@ -57,6 +57,5 @@ public class JAVMenuBar extends FlexoMenuBar {
 		}
 		return _fileMenu;
 	}
-
 
 }

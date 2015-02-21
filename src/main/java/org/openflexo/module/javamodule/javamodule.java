@@ -28,15 +28,12 @@ public class javamodule extends Module<JAVModule> {
 	public static Module<JAVModule> INSTANCE = null;
 
 	public javamodule() {
-			
-		super(JAVModule.JAV_MODULE_NAME, JAVModule.JAV_MODULE_NAME, JAVModule.class, JAVPreferences.class, "",
-				null , "JAV", JAVIconLibrary.JAV_SMALL_ICON, JAVIconLibrary.JAV_MEDIUM_ICON, JAVIconLibrary.JAV_MEDIUM_ICON_HOVER,
+
+		super(JAVModule.JAV_MODULE_NAME, JAVModule.JAV_MODULE_NAME, JAVModule.class, JAVPreferences.class, "", null, "JAV",
+				JAVIconLibrary.JAV_SMALL_ICON, JAVIconLibrary.JAV_MEDIUM_ICON, JAVIconLibrary.JAV_MEDIUM_ICON_HOVER,
 				JAVIconLibrary.JAV_BIG_ICON);
 
 		INSTANCE = this;
 	}
 
-
 }
-
-

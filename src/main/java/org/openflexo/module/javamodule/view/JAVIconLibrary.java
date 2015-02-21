@@ -1,4 +1,3 @@
-
 /*
  * (c) Copyright 2014- Openflexo
  *
@@ -27,11 +26,11 @@ import org.openflexo.rm.ResourceLocator;
 import org.openflexo.toolbox.ImageIconResource;
 
 public class JAVIconLibrary {
-	
-	
+
 	public static final ImageIcon JAV_SMALL_ICON = new ImageIconResource(ResourceLocator.locateResource("Icons/module-jav-16.png"));
 	public static final ImageIcon JAV_MEDIUM_ICON = new ImageIconResource(ResourceLocator.locateResource("Icons/module-jav-32.png"));
-	public static final ImageIcon JAV_MEDIUM_ICON_HOVER = new ImageIconResource(ResourceLocator.locateResource("Icons/module-jav-hover-32.png"));
+	public static final ImageIcon JAV_MEDIUM_ICON_HOVER = new ImageIconResource(
+			ResourceLocator.locateResource("Icons/module-jav-hover-32.png"));
 	public static final ImageIcon JAV_BIG_ICON = new ImageIconResource(ResourceLocator.locateResource("Icons/module-jav-64.png"));
 
 }

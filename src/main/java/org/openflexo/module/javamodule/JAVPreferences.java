@@ -26,6 +26,6 @@ import org.openflexo.prefs.ModulePreferences;
 
 @ModelEntity
 @XMLElement(xmlTag = "JAVPreferences")
-public interface JAVPreferences extends ModulePreferences<JAVModule>{
+public interface JAVPreferences extends ModulePreferences<JAVModule> {
 
 }

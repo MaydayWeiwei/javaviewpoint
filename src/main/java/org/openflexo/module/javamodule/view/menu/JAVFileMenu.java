@@ -20,7 +20,6 @@
 
 package org.openflexo.module.javamodule.view.menu;
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.logging.Logger;
@@ -38,7 +37,6 @@ import javax.swing.KeyStroke;
 
 import org.openflexo.module.javamodule.controller.JAVController;
 import org.openflexo.module.javamodule.controller.action.ImportAction;
-
 
 /**
  * 'File' menu for this Module
@@ -70,7 +68,8 @@ public class JAVFileMenu extends FileMenu {
 	public void quit() {
 		if (getJAVController().getApplicationContext().getResourceManager().getUnsavedResources().size() == 0) {
 			super.quit();
-		} else if (getJAVController().reviewModifiedResources()) {
+		}
+		else if (getJAVController().reviewModifiedResources()) {
 			super.quit();
 		}
 
@@ -82,7 +81,7 @@ public class JAVFileMenu extends FileMenu {
 			setIcon(IconLibrary.SAVE_ICON);
 		}
 	}
-	
+
 	public class SaveModifiedItem extends FlexoMenuItem {
 		public SaveModifiedItem() {
 			super(new SaveModifiedAction(), "save", KeyStroke.getKeyStroke(KeyEvent.VK_S, FlexoCst.META_MASK), getController(), true);

@@ -18,9 +18,7 @@
  *
  */
 
-
 package org.openflexo.module.javamodule;
-
 
 import java.util.logging.Logger;
 

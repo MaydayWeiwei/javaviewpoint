@@ -22,16 +22,20 @@ package org.openflexo.module.javamodule.controller;
 
 import org.openflexo.foundation.FlexoObject;
 import org.openflexo.foundation.FlexoProject;
+import org.openflexo.foundation.action.LoadResourceAction;
+import org.openflexo.foundation.resource.FlexoResource;
+import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
 import org.openflexo.module.FlexoModule;
+import org.openflexo.module.javamodule.view.menu.JAVMenuBar;
 import org.openflexo.selection.MouseSelectionManager;
 import org.openflexo.technologyadapter.java.JAVATechnologyAdapter;
+import org.openflexo.technologyadapter.java.radialview.JAVARepositoryView;
+import org.openflexo.technologyadapter.java.rm.JAVAResource;
 import org.openflexo.view.FlexoMainPane;
 import org.openflexo.view.controller.FlexoController;
 import org.openflexo.view.controller.TechnologyAdapterController;
 import org.openflexo.view.menu.FlexoMenuBar;
-import org.openflexo.module.javamodule.controller.JAVSelectionManager;
-import org.openflexo.module.javamodule.view.menu.JAVMenuBar;
 
 public class JAVController extends FlexoController {
 
@@ -42,11 +46,9 @@ public class JAVController extends FlexoController {
 
 	@Override
 	protected void initializePerspectives() {
-		for (TechnologyAdapter ta : getApplicationContext()
-				.getTechnologyAdapterService().getTechnologyAdapters()) {
+		for (TechnologyAdapter ta : getApplicationContext().getTechnologyAdapterService().getTechnologyAdapters()) {
 			if (ta instanceof JAVATechnologyAdapter) {
-				TechnologyAdapterController<?> tac = getApplicationContext()
-						.getTechnologyAdapterControllerService()
+				TechnologyAdapterController<?> tac = getApplicationContext().getTechnologyAdapterControllerService()
 						.getTechnologyAdapterController(ta);
 				if (tac != null) {
 					tac.installTechnologyPerspective(this);
@@ -78,4 +80,22 @@ public class JAVController extends FlexoController {
 		return new FlexoMainPane(this);
 	}
 
+	@Override
+	public void objectWasDoubleClicked(Object object) {
+		if (object instanceof FlexoResource<?>) {
+			if (((FlexoResource<?>) object).isLoadable() && !((FlexoResource<?>) object).isLoaded()) {
+
+				LoadResourceAction action = LoadResourceAction.actionType.makeNewAction((FlexoResource<?>) object, null, getEditor());
+				action.doAction();
+			}
+			else {
+				selectAndFocusObjectAsTask((FlexoObject) ((FlexoResource<?>) object).getLoadedResourceData());
+			}
+		}
+
+		if (object instanceof RepositoryFolder<?>) {
+			RepositoryFolder<JAVAResource> repository = (RepositoryFolder<JAVAResource>) object;
+			JAVARepositoryView repositoryView = new JAVARepositoryView(repository);
+		}
+	}
 }
