@@ -27,10 +27,5 @@
 			<artifactId>javaconnector-ui</artifactId>
 			<version>1.7.1-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>org.openflexo.technologyadapter</groupId>
-			<artifactId>java-radialview</artifactId>
-			<version>1.7.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 </project>

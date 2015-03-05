@@ -22,16 +22,11 @@ package org.openflexo.module.javamodule.controller;
 
 import org.openflexo.foundation.FlexoObject;
 import org.openflexo.foundation.FlexoProject;
-import org.openflexo.foundation.action.LoadResourceAction;
-import org.openflexo.foundation.resource.FlexoResource;
-import org.openflexo.foundation.resource.RepositoryFolder;
 import org.openflexo.foundation.technologyadapter.TechnologyAdapter;
 import org.openflexo.module.FlexoModule;
 import org.openflexo.module.javamodule.view.menu.JAVMenuBar;
 import org.openflexo.selection.MouseSelectionManager;
 import org.openflexo.technologyadapter.java.JAVATechnologyAdapter;
-import org.openflexo.technologyadapter.java.radialview.JAVARepositoryView;
-import org.openflexo.technologyadapter.java.rm.JAVAResource;
 import org.openflexo.view.FlexoMainPane;
 import org.openflexo.view.controller.FlexoController;
 import org.openflexo.view.controller.TechnologyAdapterController;
@@ -80,22 +75,22 @@ public class JAVController extends FlexoController {
 		return new FlexoMainPane(this);
 	}
 
-	@Override
-	public void objectWasDoubleClicked(Object object) {
-		if (object instanceof FlexoResource<?>) {
-			if (((FlexoResource<?>) object).isLoadable() && !((FlexoResource<?>) object).isLoaded()) {
-
-				LoadResourceAction action = LoadResourceAction.actionType.makeNewAction((FlexoResource<?>) object, null, getEditor());
-				action.doAction();
-			}
-			else {
-				selectAndFocusObjectAsTask((FlexoObject) ((FlexoResource<?>) object).getLoadedResourceData());
-			}
-		}
-
-		if (object instanceof RepositoryFolder<?>) {
-			RepositoryFolder<JAVAResource> repository = (RepositoryFolder<JAVAResource>) object;
-			JAVARepositoryView repositoryView = new JAVARepositoryView(repository);
-		}
-	}
+	// @Override
+	// public void objectWasDoubleClicked(Object object) {
+	// if (object instanceof FlexoResource<?>) {
+	// if (((FlexoResource<?>) object).isLoadable() && !((FlexoResource<?>) object).isLoaded()) {
+	//
+	// LoadResourceAction action = LoadResourceAction.actionType.makeNewAction((FlexoResource<?>) object, null, getEditor());
+	// action.doAction();
+	// }
+	// else {
+	// selectAndFocusObjectAsTask((FlexoObject) ((FlexoResource<?>) object).getLoadedResourceData());
+	// }
+	// }
+	//
+	// if (object instanceof RepositoryFolder<?>) {
+	// RepositoryFolder<JAVAResource> repository = (RepositoryFolder<JAVAResource>) object;
+	// JAVARepositoryView repositoryView = new JAVARepositoryView(repository);
+	// }
+	// }
 }
